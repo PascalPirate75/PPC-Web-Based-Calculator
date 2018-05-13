@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">    
+</script>
+<link rel="shortcut icon" href="/icons/calc.ico" type="image/x-icon">
+<meta http-Equiv="Cache-Control" Content="no-cache" />
+<meta http-Equiv="Pragma" Content="no-cache" />
+<meta http-Equiv="Expires">
+<link rel="stylesheet" type="text/css" href="calc.css">
+<script src="calc.js"></script>
+
+<style>
+ 
+
+</style>
+ </head>
+ <body>
+
+  <div id="calcApp">
+   <div id="memPad2SelectionContainer">
+     <div class="memPad2Slector" title="Gereral Constants and Functions" data-value="const">General</div>
+     <div class="memPad2Slector" title="Trig Functions" data-value="trig">Trig</div>
+     <div class="memPad2Slector" title="Inch conversions" data-value="inch">Inch</div>
+     <div class="memPad2Slector" title="Feet Conversions" data-value="feet">Feet</div>
+     <div class="memPad2Slector" title="Yard Conversions" data-value="yard">Yard</div>
+     <div class="memPad2Slector" title="Mile Conversions" data-value="mile">Mile</div>
+     <div class="memPad2Slector" title="Milimeter Conversions" data-value="mm">Milimeter</div>
+     <div class="memPad2Slector" title="Centimeter Conversions" data-value="cm">Centimeter</div>
+     <div class="memPad2Slector" title="Meter Conversions" data-value="meter">Meter</div>
+     <div class="memPad2Slector" title="Kilomerter Conversions" data-value="km">Kilometer</div>
+     <div class="memPad2Slector" title="Teaspoon Conversions" data-value="tsp">Teaspoon</div>
+     <div class="memPad2Slector" title="Tablespoon Conversions" data-value="tbsp">Tablespoon</div>     
+     <div class="memPad2Slector" title="Fluid ounce Conversions" data-value="founce">Fluid Ounce</div>
+     <div class="memPad2Slector" title="Cup Conversions" data-value="cup">Cups</div>
+     <div class="memPad2Slector" title="Pint Conversions" data-value="pint">Pints</div>
+     <div class="memPad2Slector" title="Quart Conversions" data-value="quart">Quarts</div>
+     <div class="memPad2Slector" title="Galon Conversions" data-value="galon">Galons</div>
+     <div class="memPad2Slector" title="Milliliter Conversions" data-value="ml">Milliliters</div>
+     <div class="memPad2Slector" title="Liter Conversions" data-value="litter">Liters</div>
+
+     <div title="" data-value="">_________________</div>     
+     <div class="memPad2Slector" title="" data-value="">Convert from pounds</div>
+     <div class="memPad2Slector" title="" data-value="">Convert from tons</div>
+     <div class="memPad2Slector" title="" data-value="">Convert from milligrams</div>
+     <div class="memPad2Slector" title="" data-value="">Convert from grams</div>
+     <div class="memPad2Slector" title="" data-value="">Convert from kilograms</div>
+     <div class="memPad2Slector" title="" data-value="">Convert from ounces</div>
+     <div class="memPad2Slector" title="" data-value="">Convert from kiloliters</div>
+
+     <!--<div class="memPad2Slector" data-value="">Convert from</div>-->
+     <!--<div class="memPad2Slector" data-value="">Convert from</div>-->
+     <!--<div class="memPad2Slector" data-value="">Convert from</div>-->
+     <!--<div class="memPad2Slector" data-value="">Convert from</div>-->
+     <!--<div class="memPad2Slector" data-value="">Convert from</div>-->
+     <!--<div class="memPad2Slector" data-value="">Convert from</div>-->
+   
+     
+   </div>
+   <div id="print">Print</div>
+   <div id="status"></div>
+   <div id="calcPaper"></div>
+   <div id="mainCalcDiv">
+      <input type="text" value="" id="calcDisplay">
+      <div id="calcKeypad">
+         <div id="memPadContainer">
+           <div id="hKey" class="smKey" title="Toggle history tape" data-value="toggle">R</div>
+           <div id="backspaceKey" class="smKey" title="Backspace" data-value="bSp">&#8653;</div>
+           <div id="undoOp" class="smKey" title="Undo previous oporation" data-value="prev">&#8613;</div>
+           
+           
+           <div id="clearKey" class="smKey" title="Clear everything" data-value="clear">C</div>
+           <div id="smKeyClr" class="smKey memKey" title="Clear memory possition clicked next" data-value="clr">CLR</div>
+           <div id="smKeySet" class="smKey memKey" title="Ser memory possition clicked next" data-value="set">SET</div>
+           <div class="smKey memKey" title="Empty Memory Storage" data-mem="" data-value="5">5M</div>
+           <div class="smKey memKey" title="Empty Memory Storage" data-mem="" data-value="4">4M</div>
+           <div class="smKey memKey" title="Empty Memory Storage" data-mem="" data-value="3">3M</div>
+           <div class="smKey memKey" title="Empty Memory Storage" data-mem="" data-value="2">2M</div>
+           <div class="smKey memKey" title="Empty Memory Storage" data-mem="" data-value="1">1M</div>
+         </div>
+
+         <div id="memPad2Container">
+ <!--<div class="sideKey" title="Pi the ratio of diameter to circumference." data-value="pi">&#960;</div>-->
+
+           <div class="sm2Key capKey" id="baseKey" title="Decimal, Cycle base to Hexadecimal" data-mem="" data-value="d">d</div>
+           <!-- Constant Section -->
+           <div class="sm2Key setClassGrey const" title="Under development" data-mem="" data-value="c9"></div>
+           <div class="sm2Key setClassGrey const" title="Under development" data-mem="" data-value="c8"></div>
+           <div class="sm2Key setClassGrey const" title="Under development" data-mem="" data-value="c7"></div>
+           <div class="sm2Key setClassGrey const" title="Under development" data-mem="" data-value="c6"></div>
+           <div class="sm2Key setClassGrey const" title="Under development" data-mem="" data-value="c5"></div>
+           <div class="sm2Key setClassGrey const" title="Under development" data-mem="" data-value="c4"></div>
+           <div class="sm2Key setClassGrey const" title="Under development" data-mem="" data-value="c3"></div>
+           <div class="sm2Key const" title="Will return the factorial of a number under 170" data-mem="" data-value="f">x!</div>
+           <div class="sm2Key const" title="Pi the ratio of diameter to circumference" data-mem="" data-value="pi">&#960;</div>
+
+           <!-- Trig Section -->
+           <div class="sm2Key hideMe setClassGrey trig" title="" data-mem="" data-value=""></div>
+           <div class="sm2Key hideMe setClassGrey trig" title="" data-mem="" data-value=""></div>
+           <div class="sm2Key hideMe setClassGrey trig" title="" data-mem="" data-value=""></div>
+           <div class="sm2Key hideMe xxSmallFont trig" title="ACOS of current number" data-value="acos">acos</div>
+           <div class="sm2Key hideMe xxSmallFont trig" title="ATAN of current number" data-value="atan">atan</div>
+           <div class="sm2Key hideMe xxSmallFont trig" title="ASIN of current number" data-value="asin">asin</div>
+           <div class="sm2Key hideMe xxSmallFont trig" title="COS of current number" data-value="cos">cos</div>
+           <div class="sm2Key hideMe xxSmallFont trig" title="TAN of current number" data-value="tan">tan</div>
+           <div class="sm2Key hideMe xxSmallFont trig" title="SIN of current number" data-value="sin">sin</div>
+
+           <!-- Inch Section -->
+ 
+           <div class="sm2Key hideMe setClassGrey inch" title="" data-value=""></div>
+           <div class="sm2Key hideMe setClassGrey inch" title="" data-value=""></div>
+
+           <div class="sm2Key hideMe xxSmallFont inch conv" title="Inches to kilometer" 
+                                                data-value="0.0000254">km</div>
+ 
+           <div class="sm2Key hideMe xxSmallFont inch conv" title="Inches to meter" 
+                                                data-value="0.0254">m</div>                                                
+           <div class="sm2Key hideMe xxSmallFont inch conv" title="Inches to centimeter" 
+                                                data-value="2.54">cm</div>
+           <div class="sm2Key hideMe xxSmallFont inch conv" title="Inches to milimeter" 
+                                                data-value="25.4">mm</div>
+           <div class="sm2Key hideMe xxSmallFont inch conv" title="Inches to mile"
+                                                data-value="0.0000157828282828">mi</div>
+           <div class="sm2Key hideMe xxSmallFont inch conv" title="Inches to yard" 
+                                                data-value="0.0277778">yd</div>
+           <div class="sm2Key hideMe xxSmallFont inch conv" title="Inches to feet" 
+                                                data-value="0.08333333">ft</div>
+                                                
+           <!-- feet Section -->
+           
+           <div class="sm2Key hideMe setClassGrey feet" title="" data-value=""></div>
+           <div class="sm2Key hideMe setClassGrey feet" title="" data-value=""></div>
+
+           <div class="sm2Key hideMe xxSmallFont feet conv" title="Feet to kilometer" 
+                                                data-value="0.00030479999">km</div>
+                                                
+           <div class="sm2Key hideMe xxSmallFont feet conv" title="Feet to meter" 
+                                                data-value="0.3048">m</div>                                                 
+           <div class="sm2Key hideMe xxSmallFont feet conv" title="Feet to centimeter" 
+                                                data-value="30.4799999999">cm</div>
+           <div class="sm2Key hideMe xxSmallFont feet conv" title="Feet to milimeter" 
+                                                data-value="304.799999999">mm</div>
+           <div class="sm2Key hideMe xxSmallFont feet conv" title="Feet to mile"
+                                                data-value="0.000189393939">mi</div>
+           <div class="sm2Key hideMe xxSmallFont feet conv" title="Feet to yard" 
+                                                data-value="0.333333333333">yd</div>
+           <div class="sm2Key hideMe xxSmallFont feet conv" title="Feet to inches" 
+                                                data-value="12">in</div>
+                                                
+           <!-- yard Section -->
+           
+           <div class="sm2Key hideMe setClassGrey yard" title="" data-value=""></div>
+           <div class="sm2Key hideMe setClassGrey yard" title="" data-value=""></div>
+
+           <div class="sm2Key hideMe xxSmallFont yard conv" title="Yard to kilometer" 
+                                                data-value="0.0009144">km</div>
+           <div class="sm2Key hideMe xxSmallFont yard conv" title="Yard to meter" 
+                                                data-value="0.9144">m</div>                                                        
+           <div class="sm2Key hideMe xxSmallFont yard conv" title="Yard to centimeter" 
+                                                data-value="91.44">cm</div>
+           <div class="sm2Key hideMe xxSmallFont yard conv" title="Yard to milimeter" 
+                                                data-value="914.4">mm</div>
+           <div class="sm2Key hideMe xxSmallFont yard conv" title="Yard to mile"
+                                                data-value="0.0005681818">mi</div>
+           <div class="sm2Key hideMe xxSmallFont yard conv" title="Yard to feet" 
+                                                data-value="3">ft</div>
+           <div class="sm2Key hideMe xxSmallFont yard conv" title="Yard to inches" 
+                                                data-value="36">in</div>                                                
+            <!-- mile Section -->
+           
+           <div class="sm2Key hideMe setClassGrey mile" title="" data-value=""></div>
+           <div class="sm2Key hideMe setClassGrey mile" title="" data-value=""></div>
+
+           <div class="sm2Key hideMe xxSmallFont mile conv" title="Mile to kilometer" 
+                                                data-value="1.60934">km</div>
+                                                
+           <div class="sm2Key hideMe xxSmallFont mile conv" title="Mile to meter" 
+                                                data-value="1609.34">m</div>                                                    
+           <div class="sm2Key hideMe xxSmallFont mile conv" title="Mile to centimeter" 
+                                                data-value="160934">cm</div>
+           <div class="sm2Key hideMe xxSmallFont mile conv" title="Mile to millimeter" 
+                                                data-value="1609340">mm</div>
+           <div class="sm2Key hideMe xxSmallFont mile conv" title="Mile to yard"
+                                                data-value="1760">yd</div>
+           <div class="sm2Key hideMe xxSmallFont mile conv" title="Mile to feet" 
+                                                data-value="5280">ft</div>
+           <div class="sm2Key hideMe xxSmallFont mile conv" title="Mile to inches" 
+                                                data-value="63360">in</div>                                                  
+                                                
+            <!-- millimeter Section -->
+           
+           <div class="sm2Key hideMe setClassGrey mm" title="" data-value=""></div>
+           <div class="sm2Key hideMe setClassGrey mm" title="" data-value=""></div>
+
+           <div class="sm2Key hideMe xxSmallFont mm conv" title="Millimeter to kilometer" 
+                                                data-value="0.000001">km</div>
+           <div class="sm2Key hideMe xxSmallFont mm conv" title="Millimeter to meter" 
+                                                data-value="0.001">m</div>                                                    
+           <div class="sm2Key hideMe xxSmallFont mm conv" title="Millimeter to centimeter" 
+                                                data-value="0.10">cm</div>
+           <div class="sm2Key hideMe xxSmallFont mm conv" title="Millimeter to mile" 
+                                                data-value="0.00000062137">mi</div>
+           <div class="sm2Key hideMe xxSmallFont mm conv" title="Millimeter to yard"
+                                                data-value="0.00109361">yd</div>
+           <div class="sm2Key hideMe xxSmallFont mm conv" title="Millimeter to feet" 
+                                                data-value="0.00328084">ft</div>
+           <div class="sm2Key hideMe xxSmallFont mm conv" title="Millimeter to inches" 
+                                                data-value="0.0393701">in</div>            
+                                                
+                                                
+            <!-- centimeter Section -->
+           
+           <div class="sm2Key hideMe setClassGrey cm" title="" data-value=""></div>
+           <div class="sm2Key hideMe setClassGrey cm" title="" data-value=""></div>
+
+           <div class="sm2Key hideMe xxSmallFont cm conv" title="Centimeter to kilometer" 
+                                                data-value="0.000001">km</div>
+
+           <div class="sm2Key hideMe xxSmallFont cm conv" title="Centimeter to meter" 
+                                                data-value="0.01">m</div>                                                    
+           <div class="sm2Key hideMe xxSmallFont cm conv" title="Centimeter to millimeter" 
+                                                data-value="0.10">mm</div>
+           <div class="sm2Key hideMe xxSmallFont cm conv" title="Centimeter to mile" 
+                                                data-value="0.00000062137">mi</div>
+           <div class="sm2Key hideMe xxSmallFont cm conv" title="Centimeter to yard"
+                                                data-value="0.00109361">yd</div>
+           <div class="sm2Key hideMe xxSmallFont cm conv" title="Centimeter to feet" 
+                                                data-value="0.00328084">ft</div>
+           <div class="sm2Key hideMe xxSmallFont cm conv" title="Centimeter to inches" 
+                                                data-value="0.393701">in</div>                                                            
+           <!-- meter Section -->
+           
+           <div class="sm2Key hideMe setClassGrey meter" title="" data-value=""></div>
+           <div class="sm2Key hideMe setClassGrey meter" title="" data-value=""></div>
+
+           <div class="sm2Key hideMe xxSmallFont meter conv" title="Meter to kilometer" 
+                                                data-value="0.001">km</div>
+
+           <div class="sm2Key hideMe xxSmallFont meter conv" title="Meter to centimeter" 
+                                                data-value="100">cm</div>                                                    
+           <div class="sm2Key hideMe xxSmallFont meter conv" title="Meter to millimeter" 
+                                                data-value="1000">mm</div>
+           <div class="sm2Key hideMe xxSmallFont meter conv" title="Meter to mile" 
+                                                data-value="0.000621371">mi</div>
+           <div class="sm2Key hideMe xxSmallFont meter conv" title="Meter to yard"
+                                                data-value="1.09361">yd</div>
+           <div class="sm2Key hideMe xxSmallFont meter conv" title="Meter to feet" 
+                                                data-value="3.28084">ft</div>
+           <div class="sm2Key hideMe xxSmallFont meter conv" title="Meter to inches" 
+                                                data-value="39.3701">in</div>         
+                                                
+           <!-- kilometer Section -->
+           
+           <div class="sm2Key hideMe setClassGrey km" title="" data-value=""></div>
+           <div class="sm2Key hideMe setClassGrey km" title="" data-value=""></div>
+
+           <div class="sm2Key hideMe xxSmallFont km conv" title="Kilometer to meter" 
+                                                data-value="1000">m</div>
+
+           <div class="sm2Key hideMe xxSmallFont km conv" title="Kilometer to centimeter" 
+                                                data-value="100000">cm</div>                                                    
+           <div class="sm2Key hideMe xxSmallFont km conv" title="Kilometer to millimeter" 
+                                                data-value="1000000">mm</div>
+           <div class="sm2Key hideMe xxSmallFont km conv" title="Kilometer to mile" 
+                                                data-value="0.621371">mi</div>
+           <div class="sm2Key hideMe xxSmallFont km conv" title="Kilometer to yard"
+                                                data-value="1093.61">yd</div>
+           <div class="sm2Key hideMe xxSmallFont km conv" title="Kilometer to feet" 
+                                                data-value="3280.84">ft</div>
+           <div class="sm2Key hideMe xxSmallFont km conv" title="Kilometer to inches" 
+                                                data-value="39370.1">in</div>                                        
+           <!-- Teaspoon section -->
+
+           <div class="sm2Key hideMe xxSmallFont tsp" title="" 
+                                                data-value=""></div>
+           <div class="sm2Key hideMe xxSmallFont tsp conv" title="Teaspoon to litter" 
+                                                data-value="0.00492892">l</div>
+           <div class="sm2Key hideMe xxSmallFont tsp  conv" title="Teaspoon to millilitter" 
+                                                data-value="4.92892">ml</div>
+           <div class="sm2Key hideMe xxSmallFont tsp  conv" title="Teaspoon to galon" 
+                                                data-value="0.00130208">gl</div> 
+           <div class="sm2Key hideMe xxSmallFont tsp  conv" title="Teaspoon to quart" 
+                                                data-value="0.00520833">qt</div>
+           <div class="sm2Key hideMe xxSmallFont tsp  conv" title="Teaspoon to pint" 
+                                                data-value="0.0104167">pt</div>
+           <div class="sm2Key hideMe xxSmallFont tsp  conv" title="Teaspoon to cup"
+                                                data-value="0.0205372">cup</div>
+           <div class="sm2Key hideMe xxSmallFont tsp  conv" title="Teaspoon to ounce" 
+                                                data-value="0.166667">oz</div>             
+            <div class="sm2Key hideMe xxSmallFont tsp  conv" title="Teaspoon to tablespoon" 
+                                                data-value="0.3333333333">tbl</div>
+                                                       
+           <!-- Tablespoon section -->
+
+           <div class="sm2Key hideMe xxSmallFont tbsp" title="" 
+                                                data-value=""></div>
+           <div class="sm2Key hideMe xxSmallFont tbsp conv" title="Tablespoon to litter" 
+                                                data-value="0.0147868">l</div>
+           <div class="sm2Key hideMe xxSmallFont tbsp  conv" title="Tablespoon to millilitter" 
+                                                data-value="14.7868">ml</div>
+           <div class="sm2Key hideMe xxSmallFont tbsp  conv" title="Tablespoon to galon" 
+                                                data-value="0.00390625">gl</div> 
+           <div class="sm2Key hideMe xxSmallFont tbsp  conv" title="Tablespoon to quart" 
+                                                data-value="0.015625">qt</div>
+           <div class="sm2Key hideMe xxSmallFont tbsp  conv" title="Tablespoon to pint" 
+                                                data-value="0.03125">pt</div>
+           <div class="sm2Key hideMe xxSmallFont tbsp  conv" title="Tablespoon to cup"
+                                                data-value="0.0616115">cup</div>
+           <div class="sm2Key hideMe xxSmallFont tbsp  conv" title="Tablespoon to ounce" 
+                                                data-value="0.5">oz</div>
+           <div class="sm2Key hideMe xxSmallFont tbsp  conv" title="Tablespoon to teaspoon" 
+                                                data-value="3">tsp</div>            
+                                                        
+           <!-- Fluid ounce section -->
+
+           <div class="sm2Key hideMe xxSmallFont ounce" title="" 
+                                                data-value=""></div>
+           <div class="sm2Key hideMe xxSmallFont ounce conv" title="Ounce to litter" 
+                                                data-value="0.0295735">l</div>
+           <div class="sm2Key hideMe xxSmallFont ounce  conv" title="Ounce to millilitter" 
+                                                data-value="29.5735">ml</div>
+           <div class="sm2Key hideMe xxSmallFont ounce  conv" title="Ounce to galon" 
+                                                data-value="0.0078125">gl</div> 
+           <div class="sm2Key hideMe xxSmallFont ounce  conv" title="Ounce to quart" 
+                                                data-value="0.03125">qt</div>
+           <div class="sm2Key hideMe xxSmallFont ounce  conv" title="Ounce to pint" 
+                                                data-value="0.0625">pt</div>
+           <div class="sm2Key hideMe xxSmallFont ounce  conv" title="Ounce to cup"
+                                                data-value="0.125">cup</div>
+           <div class="sm2Key hideMe xxSmallFont ounce  conv" title="Ounce to tablespoon" 
+                                                data-value="2">tbl</div>
+           <div class="sm2Key hideMe xxSmallFont ounce  conv" title="Ounce to teaspoon" 
+                                                data-value="6">tsp</div>             
+                                                        
+           <!-- Cup section -->
+
+           <div class="sm2Key hideMe xxSmallFont cup" title="" 
+                                                data-value=""></div>
+           <div class="sm2Key hideMe xxSmallFont cup conv" title="Cup to litter" 
+                                                data-value="0.236588">l</div>
+           <div class="sm2Key hideMe xxSmallFont cup  conv" title="Cup to millilitter" 
+                                                data-value="236.588">ml</div>
+           <div class="sm2Key hideMe xxSmallFont cup  conv" title="Cup to galon" 
+                                                data-value="0.0625">gl</div> 
+           <div class="sm2Key hideMe xxSmallFont cup  conv" title="Cup to quart" 
+                                                data-value="0.25">qt</div>
+           <div class="sm2Key hideMe xxSmallFont cup  conv" title="Cup to pint" 
+                                                data-value="0.5">pt</div>
+           <div class="sm2Key hideMe xxSmallFont cup  conv" title="Cup to ounce"
+                                                data-value="8">oz</div>
+           <div class="sm2Key hideMe xxSmallFont cup  conv" title="Cup to tablespoon" 
+                                                data-value="16">tbl</div>
+           <div class="sm2Key hideMe xxSmallFont cup  conv" title="Cup to teaspoon" 
+                                                data-value="48">tsp</div>            
+                                                        
+           <!-- Pint section -->
+
+           <div class="sm2Key hideMe xxSmallFont pint" title="" 
+                                                data-value=""></div>
+           <div class="sm2Key hideMe xxSmallFont pint conv" title="Pint to litter" 
+                                                data-value="0.473176">l</div>
+           <div class="sm2Key hideMe xxSmallFont pint  conv" title="Pint to millilitter" 
+                                                data-value="473.176">ml</div>
+           <div class="sm2Key hideMe xxSmallFont pint  conv" title="Pint to galon" 
+                                                data-value="0.125">gl</div> 
+           <div class="sm2Key hideMe xxSmallFont pint  conv" title="Pint to quart" 
+                                                data-value="0.5">qt</div>
+           <div class="sm2Key hideMe xxSmallFont pint  conv" title="Pint to cup" 
+                                                data-value="2">cup</div>
+           <div class="sm2Key hideMe xxSmallFont pint  conv" title="Pint to ounce"
+                                                data-value="16">oz</div>
+           <div class="sm2Key hideMe xxSmallFont pint  conv" title="Pint to tablespoon" 
+                                                data-value="32">tbl</div>
+           <div class="sm2Key hideMe xxSmallFont pint  conv" title="Pint to teaspoon" 
+                                                data-value="96">tsp</div>            
+                                                        
+           <!-- Quart section -->
+
+           <div class="sm2Key hideMe xxSmallFont quart" title="" 
+                                                data-value=""></div>
+           <div class="sm2Key hideMe xxSmallFont quart conv" title="Quart to litter" 
+                                                data-value="0.946353">l</div>
+           <div class="sm2Key hideMe xxSmallFont quart  conv" title="Quart to millilitter" 
+                                                data-value="946.353">ml</div>
+           <div class="sm2Key hideMe xxSmallFont quart  conv" title="Quart to galon" 
+                                                data-value="0.25">gl</div> 
+           <div class="sm2Key hideMe xxSmallFont quart  conv" title="Quart to pint" 
+                                                data-value="2">pt</div>
+           <div class="sm2Key hideMe xxSmallFont quart  conv" title="Quart to cup" 
+                                                data-value="4">cup</div>
+           <div class="sm2Key hideMe xxSmallFont quart  conv" title="Quart to oz"
+                                                data-value="32">oz</div>
+           <div class="sm2Key hideMe xxSmallFont quart  conv" title="Quart to tablespoon" 
+                                                data-value="64">tbl</div>
+           <div class="sm2Key hideMe xxSmallFont quart  conv" title="Quart to teaspoon" 
+                                                data-value="192">tsp</div>            
+                                                        
+           <!-- Galon section -->
+
+           <div class="sm2Key hideMe xxSmallFont galon" title="" 
+                                                data-value=""></div>
+           <div class="sm2Key hideMe xxSmallFont galon conv" title="Galon to litter" 
+                                                data-value="3.78541">l</div>
+           <div class="sm2Key hideMe xxSmallFont galon  conv" title="Galon to millilitter" 
+                                                data-value="3785.41">ml</div>
+           <div class="sm2Key hideMe xxSmallFont galon  conv" title="Galon to galon" 
+                                                data-value="4">qt</div> 
+           <div class="sm2Key hideMe xxSmallFont galon  conv" title="Galon to quart" 
+                                                data-value="8">pt</div>
+           <div class="sm2Key hideMe xxSmallFont galon  conv" title="Galon to pint" 
+                                                data-value="16">cup</div>
+           <div class="sm2Key hideMe xxSmallFont galon  conv" title="Galon to cup"
+                                                data-value="128">oz</div>
+           <div class="sm2Key hideMe xxSmallFont galon  conv" title="Galon to tablespoon" 
+                                                data-value="256">tbl</div>
+           <div class="sm2Key hideMe xxSmallFont galon  conv" title="Galon to teaspoon" 
+                                                data-value="768">tsp</div>            
+                                                        
+           <!-- Millilitter section -->
+
+           <div class="sm2Key hideMe xxSmallFont ml" title="" 
+                                                data-value=""></div>
+           <div class="sm2Key hideMe xxSmallFont ml conv" title="Millilitter to litter" 
+                                                data-value="0.001">l</div>
+           <div class="sm2Key hideMe xxSmallFont ml  conv" title="Millilitter to galon" 
+                                                data-value="0.000264172">gl</div>
+           <div class="sm2Key hideMe xxSmallFont ml  conv" title="Millilitter to ml" 
+                                                data-value="0.00105669">qt</div> 
+           <div class="sm2Key hideMe xxSmallFont ml  conv" title="Millilitter to quart" 
+                                                data-value="0.00211338">pt</div>
+           <div class="sm2Key hideMe xxSmallFont ml  conv" title="Millilitter to pint" 
+                                                data-value="10.00422675">cup</div>
+           <div class="sm2Key hideMe xxSmallFont ml  conv" title="Millilitter to cup"
+                                                data-value="0.033814">oz</div>
+           <div class="sm2Key hideMe xxSmallFont ml  conv" title="Millilitter to tablespoon" 
+                                                data-value="0.067628">tbl</div>
+           <div class="sm2Key hideMe xxSmallFont ml  conv" title="Millilitter to teaspoon" 
+                                                data-value="0.202884">tsp</div>            
+                                                        
+           <!-- Litter section -->
+
+           <div class="sm2Key hideMe xxSmallFont litter" title="" 
+                                                data-value=""></div>
+           <div class="sm2Key hideMe xxSmallFont litter conv" title="Galon to millilitter" 
+                                                data-value="3.78541">l</div>
+           <div class="sm2Key hideMe xxSmallFont litter  conv" title="Galon to galon" 
+                                                data-value="3785.41">ml</div>
+           <div class="sm2Key hideMe xxSmallFont litter  conv" title="Galon to litter" 
+                                                data-value="4">qt</div> 
+           <div class="sm2Key hideMe xxSmallFont litter  conv" title="Galon to quart" 
+                                                data-value="8">pt</div>
+           <div class="sm2Key hideMe xxSmallFont litter  conv" title="Galon to pint" 
+                                                data-value="16">cup</div>
+           <div class="sm2Key hideMe xxSmallFont litter  conv" title="Galon to cup"
+                                                data-value="128">oz</div>
+           <div class="sm2Key hideMe xxSmallFont litter  conv" title="Galon to tablespoon" 
+                                                data-value="256">tbl</div>
+           <div class="sm2Key hideMe xxSmallFont litter  conv" title="Galon to teaspoon" 
+                                                data-value="202.884">tsp</div>            
+                                                        
+
+           <!-- American Standard section --> 
+          
+           <div id="sm2KeyToggle" class="sm2Key capKey" title="Click for list of function categorise" 
+                                  data-mem="" data-value="">&#x279f;</div>
+
+<!--  Template for adding new conversions.
+
+
+
+<div class="sm2Key hideMe setClassGrey " title="" 
+                                      data-value=""></div>
+ <div class="sm2Key hideMe setClassGrey " title="" 
+                                      data-value=""></div>
+ <div class="sm2Key hideMe xxSmallFont conv" title="" 
+                                      data-value=""></div>
+ <div class="sm2Key hideMe xxSmallFont conv" title="" 
+                                      data-value=""></div>                                                    
+ <div class="sm2Key hideMe xxSmallFont conv" title="" 
+                                      data-value=""></div>
+ <div class="sm2Key hideMe xxSmallFont conv" title="" 
+                                      data-value=""></div>
+ <div class="sm2Key hideMe xxSmallFont conv" title=""
+                                      data-value=""></div>
+ <div class="sm2Key hideMe xxSmallFont conv" title="" 
+                                      data-value=""></div>
+ <div class="sm2Key hideMe xxSmallFont conv" title="" 
+                                      data-value=""></div>             
+
+
+-->
+
+
+
+
+
+         </div>
+         
+         <div id="hexKeyContainer">
+           
+           <div class="hKey key" title="Hex A" data-value="A">A</div>
+           <div class="hKey key" title="Hex B" data-value="B">B</div>
+           <div class="hKey key" title="Hex C" data-value="C">C</div>
+
+         </div>
+         
+         <div id="sidePadContainer">
+          
+     
+           <div class="sideKey" title="n Root" data-value="nroot" >&#8319;&#x221A;</div>
+           <div class="sideKey" title="Square Root" data-value="root">&#xb2;&#x221A;</div>
+           
+           <div class="sideKey" title="Raise to the power of n" data-value="power">X&#8319;</div>
+           <div class="sideKey" title="Square" data-value="square">X&#xb2;</div>
+           
+           <div class="sideKey" title="Inverse" data-value="Reciplical">&#xb9;/&#x2099;</div>
+
+           <div class="sideKey" style="font-size: 25px; line-height: 30px;" title="Absolute value" 
+                                data-value="abs">| |</div>
+
+           <div class="sideKey smallerFont" title="Get keyboard Scan Code from keypresses" data-value="keyCode">KEY</div>
+           <div class="sideKey smallerFont" title="Toggle between Char to CharCode" data-value="toggleCodeChar">Code</div>
+
+         </div>
+         
+         <div id="numPadContainer">
+           <div class="hKey key" title="Hex D" data-value="D">D</div>
+           <div class="hKey key" title="Hex E" data-value="E">E</div>
+           <div class="hKey key" title="Hex F" data-value="F">F</div>
+           <div class="key calcOp" data-value="MLT">&#215;</div>
+
+           
+           <div class="key calcNum" data-value="7">7</div>
+           <div class="key calcNum" data-value="8">8</div>
+           <div class="key calcNum" data-value="9">9</div>
+           <div class="key calcOp" data-value="DIV">&#xf7;</div>
+
+           <div class="key calcNum" data-value="4">4</div>
+           <div class="key calcNum" data-value="5">5</div>
+           <div class="key calcNum" data-value="6">6</div>
+           <div class="key calcOp" data-value="ADD">+</div>
+
+           <div class="key calcNum binKey" data-value="1">1</div>
+           <div class="key calcNum" data-value="2">2</div>
+           <div class="key calcNum" data-value="3">3</div>
+           <div class="key calcOp" data-value="SUP">-</div>
+
+           <div class="key calcNum binKey" data-value="9">0</div>
+           <div class="key calcNum" data-value="P">.</div>
+           <div class="key" id="neg" data-value="NEG">&#177;</div>
+           <div class="key calcOp" data-value="EQL">=</div>
+
+         
+         
+         </div>
+      </div>
+   </div>
+  </div>
+ 
+ </body>
+</html>

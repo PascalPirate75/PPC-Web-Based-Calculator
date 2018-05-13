@@ -1,0 +1,291 @@
+html {
+ 
+ 
+    margin: 0;
+    padding: 0;
+    background-color:#333333;
+   }
+   body { 
+    display:none;
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+
+    margin : 0;
+   }
+   
+   #calcApp {
+     position:absolute;
+     /*top: calc(( 100% - 302px ) / 2);*/
+     /*left: calc(( 100% - 312px ) / 2);*/
+
+   }
+   #mainCalcDiv {
+     width: 300px;
+     height: 310px;
+     background-color:#443333;
+
+     /*border: 2px solid black;*/
+     
+   }
+   #print {
+     border: 1px solid black;
+     position: absolute;
+     top:5px;
+     left:40px;
+     font-size: 14px;
+     line-height: 14px;
+     background-color: gold;
+     color: black;
+     width: 40px;
+     height: 14px;
+     text-align: center;
+     border-radius: 7px;
+     cursor: default;
+   
+  }
+  
+  #status {
+   display:none;
+   position: absolute;
+   background-color:transparent;
+   color: red;
+   font-size:25px;
+   top: 9px;
+   left: 30px;
+  }
+   #calcPaper {
+     font-size: 12px;
+     width:120px;
+     height:260px;
+     position:absolute;
+     left:0;
+     top:25px;
+     border:1px solid black;
+     background:white;
+     text-align: right;
+     padding-right: 5px;
+     z-index : 1000;
+     overflow-y:scroll;
+   }
+   #calcDisplay {
+     font-size: 20px;
+     height: 24px;
+     width : 268px;
+     margin: 10px;
+     border-radius: 5px;
+     text-align: right;
+     padding-right: 5px;
+     
+   }
+   
+   .key {
+     background-color:#f3f0f0;
+     width: 35px;
+     height: 35px;
+     font-size: 35px;
+     line-height: 35px;
+     color: black;
+     float: left;
+     margin:3px;
+     text-align: center;
+     border-radius: 3px;
+     cursor:default;
+     
+   }
+   .key:hover {
+    background-color:red;
+   }
+   .key:nth-child(4n -3) {
+      
+      clear: both;
+   }
+   
+   #calcKeypad {
+     margin: 5px;
+     margin-top: 0;
+
+     width:289px;
+     height:255px;
+     position:absolute;
+     /*background-color: green;*/
+   }
+   #numPadContainer {
+     width: 166px;
+     height: 206px;
+     background-color:rgba(255, 0, 0, 0.20);
+     position:absolute;
+     bottom: 0;
+     right: 0;
+   }
+   
+   #sidePadContainer {
+     width: 122px;
+     height: 165px;
+     background-color:rgba(255, 100, 0, 0.20);
+     position:absolute;
+     bottom: 0;
+     left: 0;
+   }
+   
+   #memPadContainer {
+    width: 278px;
+    height:26px;
+    margin:5px;
+    margin-top: -6px;
+    background-color: rgba(255, 215, 0, 0.43);
+   }
+   
+  #memPad2SelectionContainer {
+    display: none;
+    z-index: 100000;
+    position: absolute;
+    top: 5px;
+    left: 45px;
+    border: 2px solid gold;
+    
+    padding: 5px;
+    background-color: blue;
+    color: white;
+    width: 200px;
+    height: 285px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  } 
+  
+  .memPad2Slector {
+     cursor: default;
+     width:180px;
+     height:20px;
+     overflow: hidden;
+  }
+  
+  .memPad2Slector:hover {
+     background-color:red;
+  }
+  
+  #memPad2Container {
+    width: 278px;
+    height:26px;
+    margin:5px;
+    margin-top: -4px;
+    background-color: rgba(0, 0, 255, 0.43);
+   }
+   
+   
+   
+    #hexKeyContainer {
+    width: 123px;
+    height:41px;
+    /*margin:5px;*/
+    margin-top: -3px;
+    background-color: rgba(255, 0, 0, 0.20);
+   }
+   
+   .smKey {
+     background-color:#f3f0f0;
+     width: 20px;
+     height: 20px;
+     font-size: 20px;
+     line-height: 20px;
+     color: black;
+     float: right;
+     margin:2.6px;
+     text-align: center;
+     border-radius: 3px;
+     cursor:default;
+     
+   }
+   .smKey:hover {
+    background-color:red;
+   }
+   
+   .memKey {
+      font-size:50%;
+   }
+ 
+   
+   .sm2Key {
+     background-color:#f3f0f0;
+     width: 20px;
+     height: 20px;
+     font-size: 20px;
+     line-height: 20px;
+     color: black;
+     float: right;
+     margin:2.6px;
+     text-align: center;
+     border-radius: 3px;
+     cursor:default;
+     
+   }
+   .sm2Key:hover {
+    background-color:red;
+   }
+   
+ 
+ .sideKey {
+     background-color:#f3f0f0;
+     width: 55px;
+     height: 35px;
+     font-size: 35px;
+     line-height: 35px;
+     color: black;
+     float: left;
+     margin:3px;
+     text-align: center;
+     border-radius: 3px;
+     cursor:default;
+     
+   }
+   .sideKey:hover {
+    background-color:red;
+   }
+   .sideKey:nth-child(2n -1) {
+      
+      clear: both;
+   }
+   
+   .setClassGreen {
+      background-color : green; 
+   }
+  
+   .setClassGold {
+      background-color : gold; 
+   } 
+   
+   .setClassGrey {
+      background-color: grey;
+      color:darkgrey;
+   }
+   
+   .hideMe {
+     display:none;
+   }
+   
+   .slope {
+    font-size: 25px;
+    width: 100%;
+    height: 100%;
+    -ms-transform: rotate(22deg); /* IE 9 */
+    -webkit-transform: rotate(22deg); /* Chrome, Safari, Opera */
+    transform: rotate(22deg);
+
+   }
+   
+   .smallerFont {
+    
+      font-size: 20px;
+    
+   }
+   
+   .xxSmallFont {
+       font-size: 10px;
+   }
+   
+   /*.smKey:nth-child(4n -3) {*/
+      
+   /*   clear: both;*/
+   /*}*/
+
