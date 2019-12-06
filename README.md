@@ -23,4 +23,4 @@ In the future I'd like to finish the conversion section and stop the use of jque
 
  
 
-http://pascalpiratescove.com/math/calc/ 
+https://pascalpiratescove.com/math/calc/ 
